@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة مظلمة لكتابة الأرقام</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #1e1e1e;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            flex-direction: column;
+        }
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        .notification {
+            display: none;
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            position: relative;
+            text-align: center;
+        }
+        .notification .checkmark {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+        .input-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-wrapper span {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        input {
+            width: 200px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: #ffffff;
+            background-color: #333333;
+        }
+        button {
+            background-color: #ff5722;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>************4981</span>
+        <img src="https://eg.visamiddleeast.com/dam/VCOM/regional/cemea/generic-cemea/pay-with-visa/find-a-card/visa-infinite-affluent-800x450.png" alt="Card Image">
+        <div id="notification" class="notification">
+            Payment was made using another card
+        </div>
+    </div>
+    <div class="input-container">
+        <div class="input-wrapper">
+            <span>$</span>
+            <input type="text" id="numberInput" placeholder="اكتب الأرقام هنا">
+        </div>
+        <button onclick="handleClick()">give for you money</button>
+    </div>
+
+    <script>
+        function handleClick() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.transform = 'translateY(-50px)';
+                notification.style.opacity = '0';
+            }, 10000); // عرض الرسالة لمدة 10 ثوانٍ قبل التحريك
+        }
+    </script>
+</body>
+</html>
